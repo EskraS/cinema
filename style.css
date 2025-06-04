@@ -1,0 +1,148 @@
+/* 
+#4D0834
+#7A1354
+#AF1F72
+#e82a89
+*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    height: 60px;
+    background-color: #4D0834;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    z-index: 2;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+}
+
+#main-button {
+    color: #fff;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+#menu-buttons {
+    display: none;
+}
+
+#menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #7a1354ec;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+#overlay-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#overlay-menu a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#overlay.show {
+    display: flex;
+}
+
+#content {
+    height: 100vh;
+}
+
+footer {
+    background-color: #4D0834;
+    height: 200px;
+    padding: 10px;
+}
+
+#dropdown {
+    display: block;
+    position: relative;
+}
+
+#dropdown-toggle {
+    background-color: white;
+    color: #4D0834;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+#dropdown-menu {
+    position: absolute;
+    background-color: white;
+    color: #4D0834;
+    list-style: none;
+    border-radius: 4px;
+    display: none;
+    width: 100%;
+}
+
+#dropdown-menu li {
+    padding: 10px;
+}
+
+#dropdown-menu.show {
+    display: block;
+}
+
+@media (min-width: 768px) {
+  #menu-toggle {
+    display: none;
+  }
+
+  #overlay {
+    display: none !important;
+  }
+
+  #menu-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  #menu-buttons a {
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+  }
+
+  #dropdown {
+    display: none;
+  }
+
+}
