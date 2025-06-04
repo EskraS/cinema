@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="script.js" defer></script>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="script.js" defer></script>
+  <script src="api.js" defer></script>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header>
+
+  <header>
     <a href="index.html" id="main-button">მთავარი</a>
     <div id="menu-buttons">
-        <a href="#">რამე</a>
-        <a href="#">რამე</a>
-        <a href="#">რამე</a>
+      <a href="#">რამე</a>
+      <a href="#">რამე</a>
+      <a href="#">რამე</a>
     </div>
-        <div id="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-        </div>
-    </header>
+    <div id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
 
   <div id="overlay">
     <div id="overlay-menu">
@@ -31,20 +36,28 @@
     </div>
   </div>
 
-  <div id="content">
+  <search class="movieSearch">
+    </style>
+    <h1>Search Movies</h1>
+    <input type="text" id="searchInput" placeholder="Enter movie title..." />
+    <button onclick="searchMovies()">Search</button>
+  </search>
 
+  <div id="content">
+    <div id="results"></div>
   </div>
 
-    <footer>
+  <footer>
     <div id="dropdown">
-        <button id="dropdown-toggle">Dropdown</button>
-        <ul id="dropdown-menu">
+      <button id="dropdown-toggle">Dropdown</button>
+      <ul id="dropdown-menu">
         <li>რამე</li>
         <li>რამე 2</li>
         <li>რამე 3</li>
-        </ul>
+      </ul>
     </div>
-    </footer>
-    
+  </footer>
+
 </body>
+
 </html>
