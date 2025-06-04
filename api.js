@@ -30,3 +30,14 @@ function displayResults(movies) {
     resultsDiv.appendChild(movieElement);
   });
 }
+
+function loadRandomMovies() {
+  const url = `${BASE_URL}/movie/popular?api_key=${API_KEY}&language=en-US&page=${Math.floor(Math.random() * 5 + 1)}`;
+
+  fetch(url)
+    .then(response => response.json())
+    .then(data => displayResults(data.results))
+    .catch(error => console.error("Error fetching random movies:", error));
+}
+
+document.addEventListener('DOMContentLoaded', loadRandomMovies);

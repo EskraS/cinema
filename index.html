@@ -4,17 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Cinema</title>
   <script src="script.js" defer></script>
   <script src="api.js" defer></script>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-
   <header>
-    <a href="index.html" id="main-button">მთავარი</a>
+    <a href="index.html" id="main-button">Cinema</a>
     <div id="menu-buttons">
       <a href="#">რამე</a>
       <a href="#">რამე</a>
@@ -27,7 +25,6 @@
     </div>
   </header>
 
-
   <div id="overlay">
     <div id="overlay-menu">
       <a href="/pageone.html">რამე</a>
@@ -36,27 +33,29 @@
     </div>
   </div>
 
-  <search class="movieSearch">
-    </style>
-    <h1>Search Movies</h1>
-    <input type="text" id="searchInput" placeholder="Enter movie title..." />
-    <button onclick="searchMovies()">Search</button>
-  </search>
+    <search class="movie-search">
+        <input type="text" id="searchInput" placeholder="Enter movie title..." />
+        <button onclick="searchMovies()">Search</button>
+    </search>
 
-  <div id="content">
-    <div id="results"></div>
-  </div>
-
-  <footer>
-    <div id="dropdown">
-      <button id="dropdown-toggle">Dropdown</button>
-      <ul id="dropdown-menu">
-        <li>რამე</li>
-        <li>რამე 2</li>
-        <li>რამე 3</li>
-      </ul>
+    <div id="wallpaper">
+    <img src="imgs/wp13217868.webp" alt="Example Image">
     </div>
-  </footer>
+
+    <div id="content">
+        <div id="results"></div>
+    </div>
+
+    <footer>
+        <div id="dropdown">
+        <button id="dropdown-toggle">Dropdown</button>
+        <ul id="dropdown-menu">
+            <li>რამე</li>
+            <li>რამე 2</li>
+            <li>რამე 3</li>
+        </ul>
+        </div>
+    </footer>
 
 </body>
 
