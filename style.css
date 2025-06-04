@@ -13,7 +13,7 @@
 
 header {
     height: 60px;
-    background-color: #4D0834;
+    background-color: rgb(19, 19, 157);
     display: flex;
     align-items: center;
     padding: 10px;
