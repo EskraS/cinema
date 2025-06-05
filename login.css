@@ -64,6 +64,7 @@ body {
     border-radius: 15px;
     overflow: hidden;
     position: relative;
+    padding: 20px;
 }
 
 .content::before {
@@ -146,6 +147,7 @@ body {
     gap: 3px;
     color: white;
     font-family: 'Outfit', sans-serif;
+    width: 100%;
 }
 
 .login-email input,
@@ -180,7 +182,7 @@ body {
 .form-button {
     border: none;
     padding: 10px;
-    width: 70%;
+    width: 100%;
     border-radius: 5px;
     font-family: 'Outfit';
     font-weight: bolder;
