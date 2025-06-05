@@ -206,3 +206,18 @@ body {
     background-color: rgb(229, 229, 229);
     border: none
 }
+
+@media (min-width: 768px) {
+    .login-card-design {
+        flex-direction: row;
+    }
+
+    .login-left-side {
+        justify-content: center;
+        height: 100%;
+    }
+
+    .login-right-side {
+        justify-content: center;
+    }
+}
