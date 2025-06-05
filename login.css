@@ -120,7 +120,6 @@ body {
 .login-left-side h1 {
     font-family: Integral;
     font-size: 17px;
-    padding: 10px 10px;
 }
 
 .login-left-side p {
@@ -222,8 +221,11 @@ body {
         margin-top: 90px;
     }
 
+    .login-left-text{
+        width: 70%;
+    }
+
     .login-left-side h1 {
-        width: 100%;
         font-size: 30px;
         text-align: left;
         padding: 0px 0px;
