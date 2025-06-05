@@ -13,7 +13,7 @@ function searchMovies() {
 
 function displayResults(movies) {
   const resultsDiv = document.getElementById("results");
-  resultsDiv.innerHTML = ""; // clear previous results
+  resultsDiv.innerHTML = "";
 
   if (movies.length === 0) {
     resultsDiv.innerHTML = "<p>No results found.</p>";
