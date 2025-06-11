@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Home.css">
+    <link rel="stylesheet" href="/SiteCSS/Header.css">
+    <link rel="stylesheet" href="/SiteCSS/LoginCard.css">
+    <script src="Home.js"></script>
+</head>
+
+<body>
+    <div id="content">
+        <header class="home-header">
+            <input class="home-search" type="search" placeholder="Search...">
+            <div class="header-buttons">
+                <button class="header-button">Home</button>
+                <button class="header-button">რამე</button>
+                <button class="header-button">რამე</button>
+                <button class="header-button">რამე</button>
+            </div>
+            <button class="open-login" id="open-login">Sign In</button>
+        </header>
+    </div>
+    <div id="login-overlay">
+        <div id="login-popup">
+            <div class="login-background">
+                <div class="login-blurred-block"></div>
+                <div class="login-block">
+                    <div class="login-inner-block">
+                        <div class="content">
+                            <span id="close-login">&times;</span>
+                            <div class="login-card-design">
+                                <div class="login-left-side">
+                                    <div class="login-left-text">
+                                        <h1> CREATE YOUR ACCOUNT </h1>
+                                        <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil eos
+                                            perspiciatis animi?
+                                            Sint quas quod veniam. Animi blanditiis expedita placeat!
+                                        </p>
+                                    </div>
+                                </div>
+                                <form class="login-right-side">
+                                    <div class="submit-form">
+                                        <div class="login-email">
+                                            <label for="login-email">Email</label>
+                                            <input type="email" placeholder="Enter Your Email" id="loginEmail">
+                                        </div>
+                                        <div class="login-password">
+                                            <label for="login-password">Password</label>
+                                            <input type="password" placeholder="Enter Your Password" id="loginPassword">
+                                        </div>
+                                        <div class="form-buttons">
+                                            <button class="form-button" id="login-button">Log In</button>
+                                            <div class="login-divider">
+                                                <hr> Or
+                                                <hr>
+                                            </div>
+                                            <button class="form-button" id="register-button">Register</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="sharp-background"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+</html>
