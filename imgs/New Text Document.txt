@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
+    <script src="Home.js"></script>
+</head>
+
+<body>
+    <div id="content">
+        <header class="home-header">
+            <input class="home-search" type="search" placeholder="Search...">
+            <div class="header-buttons">
+                <button class="header-button">Home</button>
+                <button class="header-button">რამე</button>
+                <button class="header-button">რამე</button>
+                <button class="header-button">რამე</button>
+            </div>
+            <button class="open-login" id="open-login">Sign In</button>
+        </header>
+        <div id="login-overlay">
+            <div id="login-popup">
+                <div class="login-background">
+                    <div class="login-blurred-block"></div>
+                    <div class="login-block">
+                        <div class="login-inner-block">
+                            <div class="content">
+                                <span id="close-login">&times;</span>
+                                <div class="login-card-design">
+                                    <div class="login-left-side">
+                                        <div class="login-left-text">
+                                            <h1> CREATE YOUR ACCOUNT </h1>
+                                            <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil eos
+                                                perspiciatis animi?
+                                                Sint quas quod veniam. Animi blanditiis expedita placeat!
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <form class="login-right-side">
+                                        <div class="submit-form">
+                                            <div class="login-email">
+                                                <label for="login-email">Email</label>
+                                                <input type="email" placeholder="Enter Your Email" id="loginEmail">
+                                            </div>
+                                            <div class="login-password">
+                                                <label for="login-password">Password</label>
+                                                <input type="password" placeholder="Enter Your Password"
+                                                    id="loginPassword">
+                                            </div>
+                                            <div class="form-buttons">
+                                                <button class="form-button" id="login-button">Log In</button>
+                                                <div class="login-divider">
+                                                    <hr> Or
+                                                    <hr>
+                                                </div>
+                                                <button class="form-button" id="register-button">Register</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="sharp-background"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+@import url(fonts.css);
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-image: url("/imgs/test-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#content { 
+    color: white;
+    display: flex;
+    background: rgba(255, 255, 255, 0.158);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    font-family: "Outfit", sans-serif;
+}
+
+.home-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header-buttons{
+    display: flex;
+    gap: 20px;
+}
+
+.home-search{
+    background-color: rgb(31, 31, 31);
+    border-radius: 20px;
+    border: none;
+    padding: 8px 30px;
+}
+
+.home-search::placeholder{
+    color: rgb(181, 181, 181);
+}
+
+.header-button{
+    background: rgba(255, 255, 255, 0);
+    padding: 8px 25px;
+    color: white;
+    border-radius: 20px;
+    border: none;
+}
+
+.open-login{
+    background: rgba(255, 255, 255, 0);
+    padding: 8px 25px;
+    color: white;
+    border-radius: 20px;
+    border: none;
+}
+
+.open-login:hover{
+    background-color: rgba(139, 139, 139, 0.3);
+    transition: 0.3s;
+}
+
+.header-button:hover,
+.header-button.active {
+    background-color: rgba(139, 139, 139, 0.3);
+    transition: 0.3s;
+}
+
+/*Log In Card CSS*/
+
+#login-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#login-popup {
+  border-radius: 10px;
+  max-width: 800px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#close-login {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 28px;
+  color: white;
+}
+
+.login-background {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.login-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.login-inner-block {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    width: 70vw;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    pointer-events: auto;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-radius: 15px;
+    background: radial-gradient(ellipse at center,
+            rgba(0, 0, 0, 0) 70%,
+            rgba(0, 0, 0, 0.4) 100%);
+    z-index: 1;
+}
+
+.sharp-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+    filter: brightness(0.95);
+    z-index: -1;
+}
+
+.login-card-design {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-left-side {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Outfit", sans-serif;
+    color: rgb(240, 240, 240);
+    text-align: center;
+}
+
+.login-left-side h1 {
+    font-size: 17px;
+}
+
+.login-left-side p {
+    word-spacing: 3px;
+    padding: 0 40px;
+    font-size: 10px;
+}
+
+.submit-form {
+    width: 100%;
+    padding: 50px 30px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login-right-side {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-email,
+.login-password {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    width: 100%;
+}
+
+.login-email input,
+.login-password input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgb(255, 255, 255);
+}
+
+.login-email input::placeholder,
+.login-password input::placeholder {
+    color: rgb(53, 53, 53);
+    font-family: 'Outfit', sans-serif;
+}
+
+.login-email input:focus,
+.login-password input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.form-buttons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 25px;
+}
+
+.form-button {
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    font-family: 'Outfit';
+    font-weight: bolder;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: rgb(58, 58, 58);
+    background-color: rgba(255, 255, 255, 0.907);
+}
+
+.login-divider{
+    padding: 10px;
+    font-family: "Outfit", sans-serif;
+    display: flex;
+    gap: 10px;
+    color: rgb(220, 220, 220);
+    justify-content: center;
+    align-items: center;
+}
+
+.login-divider hr{
+    width: 50px;
+    height: 1px;
+    background-color: rgb(229, 229, 229);
+    border: none
+}
+
+//Header Hover and Active
+
+document.addEventListener("DOMContentLoaded", function () {
+    const headerButtons = document.querySelectorAll(".header-button");
+    if (headerButtons.length > 0) {
+        headerButtons[0].classList.add('active');
+    }
+
+    headerButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            headerButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+        });
+    });
+
+    //Login Button Stuff
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const overlay = document.getElementById('overlay');
+    const openLoginBtn = document.getElementById('open-login');
+    const loginOverlay = document.getElementById('login-overlay');
+    const closeLoginBtn = document.getElementById('close-login');
+
+    menuToggle.addEventListener('click', () => {
+        overlay.classList.toggle('show');
+    });
+
+    document.getElementById('dropdown-toggle').addEventListener('click', () => {
+        document.getElementById('dropdown-menu').classList.toggle('show');
+    });
+
+    openLoginBtn.addEventListener('click', () => {
+        loginOverlay.style.display = 'flex';
+    });
+
+    closeLoginBtn.addEventListener('click', () => {
+        loginOverlay.style.display = 'none';
+    });
+
+    loginOverlay.addEventListener('click', (e) => {
+        if (e.target === loginOverlay) {
+            loginOverlay.style.display = 'none';
+        }
+    });
+
+});
+
+
+//Localstorage Login Functions
+
+Can you fix up this code so the login card pops up when i press sign in button
