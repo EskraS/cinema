@@ -17,6 +17,7 @@
     border-radius: 20px;
     border: none;
     padding: 8px 30px;
+    width: 350px;
 }
 
 .home-search::placeholder {

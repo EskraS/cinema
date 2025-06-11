@@ -1,0 +1,127 @@
+#content-div-container {
+    background-color: red;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.content-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    background-color: yellow;
+    border-radius: 20px;
+    height: 600px;
+    overflow: hidden;
+}
+
+/* scroll container */
+
+#scroll-container {
+    background-color: blue;
+    padding: 20px;
+    border-radius: 20px;
+}
+#scroll-container h1{
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+#content-div-one-scroll {
+    width: 350px;
+    height: 100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+#content-div-one-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-item {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.scroll-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* content of first container */
+
+#content-div-one-content {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 20px;
+    width: 100%;
+}
+
+#content-div-one-content img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#content-img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.overlay-text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+}
+
+#overlay-text-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#overlay-text-buttons button {
+    background-color: rgb(195, 195, 195);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#overlay-text-buttons button:hover {
+    background-color: white;
+}
