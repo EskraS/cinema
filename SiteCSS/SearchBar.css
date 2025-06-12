@@ -1,0 +1,155 @@
+.home-search {
+    background-color: rgb(31, 31, 31);
+    border-radius: 20px;
+    border: none;
+    padding: 12px 30px;
+    width: 100%;
+    color: white;
+}
+
+.home-search::placeholder {
+    color: white;
+}
+
+.home-search:focus {
+    outline: none;
+}
+
+.home-search::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
+}
+
+.no-scroll {
+    position: fixed;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+.search-panel {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 100%);
+    padding-top: 40px;
+    opacity: 0;
+    width: 65%;
+    max-width: 90vw;
+    height: 80%;
+    background-color: #c9c9c95f;
+    background-image: linear-gradient(180deg,
+            rgba(200, 200, 200, 0.05) 0%,
+            rgba(150, 150, 150, 0.05) 100%);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.584);
+    transition: transform 0.3s ease-out, opacity 0.2s ease-out;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 70px;
+    height: 80%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/*Just a freezer so I can customize css easier without ts fading out*/
+
+.search-panel.freeze {
+    transition: none !important;
+    transform: translate(-50%, -50%) !important;
+    opacity: 1 !important;
+    pointer-events: auto;
+    visibility: visible !important;
+}
+
+.search-panel.active {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+
+.panel-search {
+    text-align: center;
+    padding: 10px 140px;
+    border-radius: 20px;
+    background-color: #ffffff12;
+    border: none;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    color: white;
+}
+
+.panel-search::placeholder {
+    color: white;
+}
+
+.panel-search:focus {
+    outline: none;
+}
+
+.panel-search::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
+}
+
+.panel-movies {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    overflow-y: auto;
+    padding-bottom: 40px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-behavior: smooth;
+
+}
+
+.panel-movies::-webkit-scrollbar {
+    display: none;
+}
+
+
+.panel-movies {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    overflow-y: auto;
+    max-height: calc(80vh - 100px);
+    padding-bottom: 20px;
+}
+
+.panel-card {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.panel-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.panel-card .title-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px 10px 10px 10px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+    font-size: 1rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 70px;
+}

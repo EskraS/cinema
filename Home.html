@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="SiteCSS/Contents.css" />
     <link rel="stylesheet" href="SiteCSS/RightNavbar.css" />
     <link rel="stylesheet" href="SiteCSS/Catalogue.css">
+    <link rel="stylesheet" href="SiteCSS/SearchBar.css">
 
     <!-- Google Icon Imports -->
 
@@ -28,6 +29,7 @@
     <Script defer src="SiteJS/TrendingMovies.js"></Script>
     <script defer src="SiteJS/ScrollBar.js"></script>
     <script defer src="SiteJS/MovieScrollbarLeft.js"></script>
+    <script defer src="SiteJS/Search.js"></script>
 </head>
 
 <body>
@@ -171,6 +173,13 @@
         </div>
     </div>
 
+    <!-- Fullscreen Search Results Panel -->
+    <div id="search-panel" class="search-panel" hidden>
+            <input type="search" class="panel-search" placeholder="Search">
+            <div class="panel-movies">
+                <div class="panel-card"></div>
+            </div>
+    </div>
 </body>
 
 </html>
