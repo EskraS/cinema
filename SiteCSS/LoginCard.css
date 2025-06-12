@@ -1,11 +1,9 @@
-/*Log In Card CSS*/
+/* Log In Card CSS */
 
 #login-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     background: rgba(0, 0, 0, 0.4);
     display: none;
     justify-content: center;
@@ -16,18 +14,19 @@
 #login-popup {
     border-radius: 10px;
     max-width: 800px;
-    position: relative;
     width: 100%;
     height: 100%;
+    position: relative;
 }
 
 #close-login {
     position: absolute;
-    top: 0;
-    right: 10px;
+    top: 0; right: 10px;
     font-size: 28px;
     color: white;
     cursor: pointer;
+    background-color: transparent;
+    border: none;
 }
 
 .login-background {
@@ -38,29 +37,22 @@
 
 .login-block {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
+    inset: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
     pointer-events: none;
 }
 
 .login-inner-block {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(99, 99, 99, 0.1);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     border-radius: 16px;
     width: 70vw;
     height: 75vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: visible;
     pointer-events: auto;
 }
 
@@ -71,28 +63,21 @@
     overflow: hidden;
     position: relative;
     padding: 20px;
-    overflow: hidden;
 }
 
 .content::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     pointer-events: none;
     border-radius: 15px;
-    background: radial-gradient(ellipse at center,
-            rgba(0, 0, 0, 0) 70%,
-            rgba(0, 0, 0, 0.4) 100%);
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.4) 100%);
     z-index: 1;
 }
 
 .sharp-background {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50%; left: 50%;
     width: 100vw;
     height: 100vh;
     transform: translate(-50%, -50%);
@@ -114,7 +99,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-family: "Outfit", sans-serif;
     color: rgb(240, 240, 240);
     text-align: center;
 }
@@ -154,7 +138,6 @@
     flex-direction: column;
     gap: 10px;
     color: white;
-    font-family: 'Outfit', sans-serif;
     width: 100%;
 }
 
@@ -163,13 +146,13 @@
     padding: 10px;
     border-radius: 5px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    background-color: rgb(255, 255, 255);
+    background-color: #fff;
+    font-family: 'Outfit', sans-serif;
 }
 
 .login-email input::placeholder,
 .login-password input::placeholder {
     color: rgb(53, 53, 53);
-    font-family: 'Outfit', sans-serif;
 }
 
 .login-email input:focus,
@@ -192,7 +175,7 @@
     padding: 10px;
     width: 100%;
     border-radius: 5px;
-    font-family: 'Outfit';
+    font-family: 'Outfit', sans-serif;
     font-weight: bolder;
     font-size: 13px;
     letter-spacing: 1px;
@@ -202,7 +185,6 @@
 
 .login-divider {
     padding: 10px;
-    font-family: "Outfit", sans-serif;
     display: flex;
     gap: 10px;
     color: rgb(220, 220, 220);
@@ -214,7 +196,7 @@
     width: 50px;
     height: 1px;
     background-color: rgb(229, 229, 229);
-    border: none
+    border: none;
 }
 
 @media (min-width: 768px) {
@@ -224,7 +206,7 @@
 
     .login-left-side {
         height: 100%;
-        justify-content: start;
+        justify-content: flex-start;
         margin-top: 90px;
     }
 
@@ -235,13 +217,12 @@
     .login-left-side h1 {
         font-size: 30px;
         text-align: left;
-        padding: 0px 0px;
     }
 
     .login-left-side p {
         font-size: 16px;
         text-align: left;
-        padding: 0px 0px;
+        padding: 0;
     }
 
     .submit-form {
