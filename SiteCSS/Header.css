@@ -15,17 +15,7 @@
 }
 
 
-.home-search {
-    background-color: rgb(31, 31, 31);
-    border-radius: 20px;
-    border: none;
-    padding: 12px 30px;
-    width: 100%;
-}
 
-.home-search::placeholder {
-    color: rgb(181, 181, 181);
-}
 
 .header-button {
     background: rgba(255, 255, 255, 0);
