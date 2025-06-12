@@ -1,0 +1,103 @@
+.open-login {
+    background: rgba(255, 255, 255, 0);
+    padding: 12px;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.open-login:hover {
+    background-color: rgba(139, 139, 139, 0.3);
+    transition: 0.3s;
+}
+
+.open-login.logged-in {
+    background: rgba(255, 255, 255, 0.167);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.open-login.logged-in:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.open-login.logged-in span.material-symbols-outlined {
+    color: rgba(200, 200, 200, 1);
+}
+
+/*Dropdown Menu*/
+
+@keyframes dropdownAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translate(20px, -10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+.dropdown-menu {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.144);
+  backdrop-filter: blur(1px);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  padding: 8px 0;
+  margin-top: 60px;
+  margin-left: -230px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  transform-origin: top right;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.dropdown-menu.show {
+  animation: dropdownAppear 0.3s ease forwards;
+}
+
+.dropdown-menu[hidden] {
+  display: none;
+}
+
+.dropdown-menu button {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  text-align: left;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dropdown-menu button:hover {
+  background-color: rgba(0,0,0,0.05);
+}
+
+
+
+/*Bottom Navbar [TO-DO]*/
+
+.right-navbar {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.167);
+    border-radius: 25px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}

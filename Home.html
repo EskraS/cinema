@@ -2,104 +2,175 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Document</title>
-    <link rel="stylesheet" href="Home.css">
-    <link rel="stylesheet" href="SiteCSS/Header.css">
-    <link rel="stylesheet" href="SiteCSS/LoginCard.css">
-    <link rel="stylesheet" href="SiteCSS/Contents.css">
-    <script src="Home.js"></script>
-    <script src="Script.js"></script>
+
+    <!-- Css Imports -->
+
+    <link rel="stylesheet" href="Home.css" />
+    <link rel="stylesheet" href="SiteCSS/Header.css" />
+    <link rel="stylesheet" href="SiteCSS/LoginCard.css" />
+    <link rel="stylesheet" href="SiteCSS/Contents.css" />
+    <link rel="stylesheet" href="SiteCSS/RightNavbar.css" />
+    <link rel="stylesheet" href="SiteCSS/Catalogue.css">
+
+    <!-- Google Icon Imports -->
+
+    <link rel="stylesheet" href="SiteCSS/GoogleFonts.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=face_6" />
+
+    <!-- Javascript Imports-->
+
+    <script defer src="Home.js"></script>
+    <Script defer src="SiteJS/SavedMovies.js"></Script>
+    <Script defer src="SiteJS/TrendingMovies.js"></Script>
+    <script defer src="SiteJS/ScrollBar.js"></script>
+    <script defer src="SiteJS/MovieScrollbarLeft.js"></script>
 </head>
 
 <body>
-    <div id="content">
-        <header class="home-header">
-            <input class="home-search" type="search" placeholder="Search...">
-            <div class="header-buttons">
-                <button class="header-button">Home</button>
-                <button class="header-button">რამე</button>
-                <button class="header-button">რამე</button>
-                <button class="header-button">რამე</button>
-            </div>
-            <button class="open-login" id="open-login">Sign In</button>
-        </header>
 
+    <main id="content">
         <div id="content-div-container">
 
-            <div class="content-div">
-                <div id="scroll-container">
-                <h1>Popular Today!</h1>
-                <div id="content-div-one-scroll"></div>
-                </div>
-                <div id="content-div-one-content">
-                    <img src="imgs/spiderman.jpg" alt="">
-                    <div id="content-img-overlay">
-                        <div class="overlay-text">
-                            <span>11/26/2025</span>
-                            <h1>Spider-Man: Across the Spider-Verse</h1>
-                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ipsum repellendus nam est assumenda, ad alias necessitatibus laborum, excepturi ducimus ipsam nulla cupiditate culpa. Aspernatur voluptas aut quaerat quidem quisquam.</span>
-                            <div id="overlay-text-buttons">
-                            <button>Watch</button>
-                            <button>Trailer</button>
+            <section class="content-div">
+                <aside class="content-left">
+                    <input class="home-search" type="search" placeholder="Search..." />
+
+                    <div id="scroll-container">
+                        <h1>Popular Today!</h1>
+                        <div id="content-div-one-scroll"></div>
+                    </div>
+
+                    <div id="user-saved">
+                        <h1>Continue Watching</h1>
+                        <div id="saved-cards"></div>
+                    </div>
+                </aside>
+
+                <section class="content-middle">
+                    <header class="home-header">
+                        <nav class="header-buttons">
+                            <button class="header-button">Home</button>
+                            <button class="header-button">რამე</button>
+                            <button class="header-button">რამე</button>
+                            <button class="header-button">Contact</button>
+                        </nav>
+                    </header>
+
+                    <article id="content-div-one-content">
+                        <img src="imgs/spiderman.jpg" alt="Spider-Man Poster" />
+                        <div id="content-img-overlay">
+                            <div class="overlay-text">
+                                <span>11/26/2025</span>
+                                <h1>Spider-Man: Across the Spider-Verse</h1>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ipsum repellendus
+                                    nam est assumenda, ad alias necessitatibus laborum, excepturi ducimus ipsam nulla
+                                    cupiditate culpa. Aspernatur voluptas aut quaerat quidem quisquam.
+                                </p>
+                                <div id="overlay-text-buttons">
+                                    <button>Watch</button>
+                                    <button>Trailer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <div class="diff-movies-container">
+                        <div class="trending-movies">
+                            <h1>Trending Movies</h1>
+                            <div class="scroll-wrapper">
+                                <button id="scroll-left" class="scroll-button">&#8592;</button>
+
+                                <div class="trending-cards-wrapper">
+                                    <div id="trending-cards" class="trending-cards"></div>
+                                </div>
+
+                                <button id="scroll-right" class="scroll-button">&#8594;</button>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </section>
+                <aside class="content-right">
+                    <button class="open-login" id="open-login">Sign In</button>
+                    <div class="right-navbar">
+                    </div>
 
-            <div class="content-div"></div>
+                    <div id="user-menu" class="dropdown-menu" role="menu" hidden>
+                        <button role="menuitem" id="view-profile">View Profile</button>
+                        <button role="menuitem" id="logout">Logout</button>
+                    </div>
+                </aside>
+            </section>
         </div>
+    </main>
 
-    </div>
-    <div id="login-overlay">
+    <!-- Login Overlay -->
+    <div id="login-overlay" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1">
         <div id="login-popup">
             <div class="login-background">
-                <div class="login-blurred-block"></div>
+
                 <div class="login-block">
                     <div class="login-inner-block">
                         <div class="content">
-                            <span id="close-login">&times;</span>
+                            <button id="close-login" aria-label="Close login form">&times;</button>
+
                             <div class="login-card-design">
                                 <div class="login-left-side">
                                     <div class="login-left-text">
-                                        <h1> CREATE YOUR ACCOUNT </h1>
-                                        <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil eos
-                                            perspiciatis animi?
-                                            Sint quas quod veniam. Animi blanditiis expedita placeat!
+                                        <h1>CREATE YOUR ACCOUNT</h1>
+                                        <p>
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil eos
+                                            perspiciatis animi? Sint quas quod veniam. Animi blanditiis expedita
+                                            placeat!
                                         </p>
                                     </div>
                                 </div>
-                                <form class="login-right-side">
+
+                                <form class="login-right-side" novalidate>
                                     <div class="submit-form">
+
                                         <div class="login-email">
-                                            <label for="login-email">Email</label>
-                                            <input type="email" placeholder="Enter Your Email" id="loginEmail">
+                                            <label for="loginEmail">Email</label>
+                                            <input type="email" placeholder="Enter Your Email" id="loginEmail" required
+                                                autocomplete="email" />
                                         </div>
+
                                         <div class="login-password">
-                                            <label for="login-password">Password</label>
-                                            <input type="password" placeholder="Enter Your Password" id="loginPassword">
+                                            <label for="loginPassword">Password</label>
+                                            <input type="password" placeholder="Enter Your Password" id="loginPassword"
+                                                required autocomplete="current-password" />
                                         </div>
+
                                         <div class="form-buttons">
-                                            <button class="form-button" id="login-button">Log In</button>
+                                            <button type="submit" class="form-button" id="login-button">
+                                                Log In
+                                            </button>
+
                                             <div class="login-divider">
-                                                <hr> Or
-                                                <hr>
+                                                <hr /> Or
+                                                <hr />
                                             </div>
-                                            <button class="form-button" id="register-button">Register</button>
+
+                                            <button type="button" class="form-button" id="register-button">
+                                                Register
+                                            </button>
                                         </div>
                                     </div>
                                 </form>
+
                                 <div class="sharp-background"></div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
-    
+
 </body>
 
 </html>
