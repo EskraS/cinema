@@ -4,30 +4,36 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Document</title>
+    <title>Home - Cinema</title>
 
     <!-- Css Imports -->
 
-    <link rel="stylesheet" href="Home.css" />
-    <link rel="stylesheet" href="SiteCSS/Header.css" />
-    <link rel="stylesheet" href="SiteCSS/LoginCard.css" />
-    <link rel="stylesheet" href="SiteCSS/Contents.css" />
-    <link rel="stylesheet" href="SiteCSS/RightNavbar.css" />
-    <link rel="stylesheet" href="SiteCSS/Catalogue.css">
-    <link rel="stylesheet" href="SiteCSS/SearchBar.css">
+    <!-- Vendor & base -->
+    <link rel="stylesheet" href="SiteCSS/vendor/google-fonts.css" />
+    <link rel="stylesheet" href="SiteCSS/base/fonts.css" />
+
+    <!-- Layout -->
+    <link rel="stylesheet" href="SiteCSS/layout/home-layout.css" />
+    <link rel="stylesheet" href="SiteCSS/layout/content-layout.css" />
+
+    <!-- Components -->
+    <link rel="stylesheet" href="SiteCSS/components/header.css" />
+    <link rel="stylesheet" href="SiteCSS/components/login-card.css" />
+    <link rel="stylesheet" href="SiteCSS/components/right-navbar.css" />
+    <link rel="stylesheet" href="SiteCSS/components/catalogue.css" />
+    <link rel="stylesheet" href="SiteCSS/components/search-bar.css" />
+    <link rel="stylesheet" href="SiteCSS/components/contact-form.css" />
 
     <!-- Google Icon Imports -->
 
-    <link rel="stylesheet" href="SiteCSS/GoogleFonts.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=face_6" />
 
     <!-- Javascript Imports-->
-
+    <script defer src="SiteJS/api.js"></script>
     <script defer src="Home.js"></script>
-    <Script defer src="SiteJS/SavedMovies.js"></Script>
-    <Script defer src="SiteJS/TrendingMovies.js"></Script>
-    <script defer src="SiteJS/ScrollBar.js"></script>
+    <script defer src="SiteJS/SavedMovies.js"></script>
+    <script defer src="SiteJS/TrendingMovies.js"></script>
     <script defer src="SiteJS/MovieScrollbarLeft.js"></script>
     <script defer src="SiteJS/Search.js"></script>
 </head>
@@ -50,6 +56,11 @@
                         <h1>Continue Watching</h1>
                         <div id="saved-cards"></div>
                     </div>
+
+                    <div id="user-favorites">
+                        <h1>Favorites</h1>
+                        <div id="favorite-cards"></div>
+                    </div>
                 </aside>
 
                 <section class="content-middle">
@@ -58,25 +69,23 @@
                             <button class="header-button">Home</button>
                             <button class="header-button">რამე</button>
                             <button class="header-button">რამე</button>
-                            <button class="header-button">Contact</button>
+                            <button class="header-button" id="contact-button">Contact</button>
                         </nav>
                     </header>
 
                     <article id="content-div-one-content">
-                        <img src="imgs/spiderman.jpg" alt="Spider-Man Poster" />
+                        <img id="hero-image" src="imgs/spiderman.jpg" alt="Spider-Man Poster" />
                         <div id="content-img-overlay">
-                            <div class="overlay-text">
-                                <span>11/26/2025</span>
-                                <h1>Spider-Man: Across the Spider-Verse</h1>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ipsum repellendus
-                                    nam est assumenda, ad alias necessitatibus laborum, excepturi ducimus ipsam nulla
-                                    cupiditate culpa. Aspernatur voluptas aut quaerat quidem quisquam.
-                                </p>
-                                <div id="overlay-text-buttons">
-                                    <button>Watch</button>
-                                    <button>Trailer</button>
+                            <div class="overlay-bottom">
+                                <div class="overlay-text">
+                                    <span id="hero-date">11/26/2025</span>
+                                    <h1 id="hero-title">Spider-Man: Across the Spider-Verse</h1>
+                                    <p id="hero-description">Lorem ipsum...</p>
                                 </div>
+                            </div>
+                            <div id="overlay-text-buttons">
+                                <button id="hero-watch-button">Watch</button>
+                                <button id="hero-trailer-button">Trailer</button>
                             </div>
                         </div>
                     </article>
@@ -93,16 +102,41 @@
                                 <button id="scroll-right" class="scroll-button">&#8594;</button>
                             </div>
                         </div>
+
+                        <div class="trending-movies">
+                            <h1>Upcoming Movies</h1>
+                            <div class="scroll-wrapper">
+                                <button id="scroll-left-upcoming" class="scroll-button">&#8592;</button>
+
+                                <div class="trending-cards-wrapper">
+                                    <div id="upcoming-cards" class="trending-cards"></div>
+                                </div>
+
+                                <button id="scroll-right-upcoming" class="scroll-button">&#8594;</button>
+                            </div>
+                        </div>
                     </div>
+
+                    <section class="contact-section" id="contact-section">
+                        <div class="contact-form">
+                            <h1>Contact us</h1>
+                            <form action="">
+                                <input type="email" placeholder="Email">
+                                <input type="text" placeholder="Message">
+                                <button type="submit">Submit</button>
+                            </form>
+                            <h5>By keeping the box below checked, you allow us to send you emails about new and upcoming movies.</h5>
+                            <div class="contact-consent">
+                                <label for="email-checkbox">Send me emails about new and upcoming movies</label>
+                                <input type="checkbox" id="email-checkbox">
+                            </div>
+                        </div>
+                    </section>
                 </section>
                 <aside class="content-right">
                     <button class="open-login" id="open-login">Sign In</button>
                     <div class="right-navbar">
-                    </div>
-
-                    <div id="user-menu" class="dropdown-menu" role="menu" hidden>
-                        <button role="menuitem" id="view-profile">View Profile</button>
-                        <button role="menuitem" id="logout">Logout</button>
+                        <div class="scroll-indicator" aria-hidden="true"></div>
                     </div>
                 </aside>
             </section>

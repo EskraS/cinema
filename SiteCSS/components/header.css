@@ -1,9 +1,22 @@
-/*Header Design*/
+/* Component: site header and nav buttons */
 
 .home-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    gap: 24px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-radius: 20px;
+}
+
+.header-search {
+    flex: 1;
+}
+
+.header-search .home-search {
     width: 100%;
 }
 
@@ -11,11 +24,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 24px; /* consistent spacing between nav items */
 }
 
-
-
+.header-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
 
 .header-button {
     background: rgba(255, 255, 255, 0);
@@ -23,6 +39,7 @@
     color: white;
     border-radius: 20px;
     border: none;
+    cursor: pointer;
 }
 
 .header-button:hover,
@@ -30,3 +47,4 @@
     background-color: rgba(139, 139, 139, 0.3);
     transition: 0.3s;
 }
+

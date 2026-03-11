@@ -1,9 +1,12 @@
+/* Layout: main content containers, left scroll list, saved/favorites and hero area */
+
 #content-div-container {
     gap: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 100%;
     border-radius: 20px;
     overflow: hidden;
 }
@@ -21,8 +24,7 @@
 
 #scroll-container {
     border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.167);
-    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.062);
     height: 595px;
     padding: 20px;
     overflow: hidden;
@@ -81,23 +83,25 @@
     display: none;
 }
 
-/*saved movies by the user*/
+/* saved movies by the user */
 
-#user-saved {
+#user-saved,
+#user-favorites {
     border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.167);
-    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.062);
     height: 595px;
     padding: 20px;
     overflow: hidden;
 }
 
-#user-saved h1 {
+#user-saved h1,
+#user-favorites h1 {
     font-size: 20px;
     margin-bottom: 20px;
 }
 
-#saved-cards{
+#saved-cards,
+#favorite-cards {
     height: 100%;
     overflow-y: auto;
     display: flex;
@@ -141,7 +145,8 @@
     padding: 10px;
 }
 
-#saved-cards::-webkit-scrollbar {
+#saved-cards::-webkit-scrollbar,
+#favorite-cards::-webkit-scrollbar {
     display: none;
 }
 
@@ -156,42 +161,86 @@
     height: 595px;
 }
 
-#content-div-one-content img {
+/* Static base image */
+#hero-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
 
-
+/* Static dark overlay + text, always sitting on base image */
 #content-img-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     background: rgba(0, 0, 0, 0.5);
     color: white;
     display: flex;
     align-items: flex-end;
-    justify-content: flex-start;
     padding: 20px;
     box-sizing: border-box;
+}
+
+/* The incoming slide — entire thing moves as one unit */
+.hero-slide {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease;
+}
+
+.hero-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Dark overlay + text inside the slide — mirrors #content-img-overlay exactly */
+.hero-slide-overlay-content {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Shared by both static and slide overlays */
+.overlay-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+    position: absolute;
+    bottom: 70px; /* sits above the buttons — adjust this value to taste */
+    left: 20px;
 }
 
 .overlay-text {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 50%;
+    z-index: 10;
 }
 
+
 #overlay-text-buttons {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
     display: flex;
     flex-direction: row;
     gap: 10px;
+    z-index: 10; /* always on top of everything */
 }
 
+.overlay-text-buttons button,
 #overlay-text-buttons button {
     background-color: rgb(195, 195, 195);
     padding: 10px 20px;
@@ -200,6 +249,7 @@
     cursor: pointer;
 }
 
+.overlay-text-buttons button:hover,
 #overlay-text-buttons button:hover {
     background-color: white;
 }

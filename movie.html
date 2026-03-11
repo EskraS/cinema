@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie</title>
+
+    <!-- Css Imports -->
+    <link rel="stylesheet" href="SiteCSS/vendor/google-fonts.css" />
+    <link rel="stylesheet" href="SiteCSS/base/fonts.css" />
+    <link rel="stylesheet" href="SiteCSS/components/header.css">
+    <link rel="stylesheet" href="SiteCSS/components/login-card.css" />
+    <link rel="stylesheet" href="SiteCSS/components/right-navbar.css" />
+    <link rel="stylesheet" href="SiteCSS/components/moviePage.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- Javascript Imports-->
+    <script defer src="SiteJS/api.js"></script>
+    <script defer src="Home.js"></script>
+    <script defer src="SiteJS/Movie.js"></script>
+</head>
+
+<body>
+    <div class="movie-blur-layer">
+        <div class="page-card">
+            <header class="movie-header">
+                <nav class="header-buttons">
+                    <button class="header-button" onclick="window.location.href='index.html'">Home</button>
+                </nav>
+                <aside class="content-right">
+                    <span class="material-symbols-outlined">share</span>
+                    <span class="material-symbols-outlined">bookmark</span>
+                    <button class="open-login" id="open-login">
+                        <span class="material-symbols-outlined">person</span>
+                    </button>
+                    <div class="right-navbar">
+                        <div class="scroll-indicator" aria-hidden="true"></div>
+                    </div>
+                </aside>
+                <div id="login-overlay" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1">
+                    <div id="login-popup">
+                        <div class="login-background">
+                            <div class="login-block">
+                                <div class="login-inner-block">
+                                    <div class="content">
+                                        <button id="close-login" aria-label="Close login form">&times;</button>
+                                        <div class="login-card-design">
+                                            <div class="login-left-side">
+                                                <div class="login-left-text">
+                                                    <h1>CREATE YOUR ACCOUNT</h1>
+                                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem,
+                                                        voluptates cum praesentium similique laudantium voluptate amet
+                                                        numquam ipsum ab corrupti? Nemo dolor esse minima! Illum
+                                                        asperiores consequatur vel omnis quisquam!</p>
+                                                </div>
+                                            </div>
+                                            <form class="login-right-side" novalidate>
+                                                <div class="submit-form">
+                                                    <div class="login-email">
+                                                        <label for="loginEmail">Email</label>
+                                                        <input type="email" placeholder="Enter Your Email"
+                                                            id="loginEmail" required autocomplete="email" />
+                                                    </div>
+                                                    <div class="login-password">
+                                                        <label for="loginPassword">Password</label>
+                                                        <input type="password" placeholder="Enter Your Password"
+                                                            id="loginPassword" required
+                                                            autocomplete="current-password" />
+                                                    </div>
+                                                    <div class="form-buttons">
+                                                        <button type="submit" class="form-button" id="login-button">Log
+                                                            In</button>
+                                                        <div class="login-divider">
+                                                            <hr /> Or
+                                                            <hr />
+                                                        </div>
+                                                        <button type="button" class="form-button"
+                                                            id="register-button">Register</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <div class="sharp-background"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="movie-content">
+                <div class="movie-content-left">
+                    <h1 id="movie-title">Title</h1>
+                    <div class="movie-info">
+                        <div class="movie-rating">
+                            <span class="material-symbols-outlined"
+                                style="color: gold; font-variation-settings: 'FILL' 1;">star</span>
+                            <span id="movie-rating">0.0 | 10</span>
+                        </div>
+                        <span id="movie-duration">12h 12m</span>
+                        <span>•</span>
+                        <span id="movie-genre">Genre</span>
+                        <span>•</span>
+                        <span id="movie-release-date">2026</span>
+                    </div>
+                    <div class="movie-description" id="movie-overview">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio est, enim perspiciatis nesciunt
+                        ab adipisci impedit officiis, earum ipsa voluptate numquam tenetur quam hic laborum.
+                    </div>
+                    <div class="movie-button-container">
+                        <button class="movie-button">
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                            Watch
+                        </button>
+                        <button class="movie-button">Trailer</button>
+                    </div>
+                </div>
+                <div class="movie-content-right">
+                    <div class="movie-posters-section">
+                        <h2>Posters</h2>
+                        <div class="movie-posters-grid" id="movie-posters">
+                            <img class="movie-poster-thumb" src="https://placehold.co/120x70" />
+                            <img class="movie-poster-thumb" src="https://placehold.co/120x70" />
+                            <img class="movie-poster-thumb" src="https://placehold.co/120x70" />
+                            <img class="movie-poster-thumb" src="https://placehold.co/120x70" />
+                        </div>
+                    </div>
+                    <div class="movie-actors-section">
+                        <h2>Actors</h2>
+                        <div class="movie-actors-row" id="movie-actors">
+                            <div class="actor-card">
+                                <img src="https://placehold.co/55x55" />
+                                <span>Actor</span>
+                            </div>
+                            <div class="actor-card">
+                                <img src="https://placehold.co/55x55" />
+                                <span>Actor</span>
+                            </div>
+                            <div class="actor-card">
+                                <img src="https://placehold.co/55x55" />
+                                <span>Actor</span>
+                            </div>
+                            <div class="actor-card">
+                                <img src="https://placehold.co/55x55" />
+                                <span>Actor</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

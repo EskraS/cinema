@@ -17,6 +17,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const userMenuId = 'user-menu';
     let loggedIn = false;
 
+    // Scroll indicator in right navbar
+    const scrollIndicator = document.querySelector(".scroll-indicator");
+    const rightNavbar = document.querySelector(".right-navbar");
+
+    // Contact button scroll
+    const contactBtn = document.getElementById('contact-button');
+    const contactSection = document.getElementById('contact-section');
+    if (contactBtn && contactSection) {
+        contactBtn.addEventListener('click', () => {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+
     const userMenu = document.createElement('div');
     userMenu.id = userMenuId;
     userMenu.classList.add('dropdown-menu');
@@ -37,6 +50,68 @@ document.addEventListener("DOMContentLoaded", function () {
     userMenu.appendChild(logoutBtn);
 
     openLoginBtn.parentNode.insertBefore(userMenu, openLoginBtn.nextSibling);
+
+    if (scrollIndicator && rightNavbar) {
+        const indicatorHeight = scrollIndicator.offsetHeight;
+        let isDragging = false;
+
+        const updateScrollIndicatorFromScroll = () => {
+            if (isDragging) return;
+            const scrollTop = window.scrollY || window.pageYOffset;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? Math.min(Math.max(scrollTop / docHeight, 0), 1) : 0;
+
+            const navbarRect = rightNavbar.getBoundingClientRect();
+            const navbarHeight = navbarRect.height;
+            const maxTravel = navbarHeight - indicatorHeight - 16; // padding from top/bottom
+            const offset = 8 + maxTravel * progress;
+
+            scrollIndicator.style.top = `${offset}px`;
+        };
+
+        const updateScrollFromIndicator = (clientY) => {
+            const navbarRect = rightNavbar.getBoundingClientRect();
+            const navbarTop = navbarRect.top;
+            const navbarHeight = navbarRect.height;
+
+            // Position of the center of the indicator within the navbar
+            let offsetWithinNavbar = clientY - navbarTop - indicatorHeight / 2;
+            const maxTravel = navbarHeight - indicatorHeight - 16;
+
+            // Clamp within track
+            offsetWithinNavbar = Math.max(8, Math.min(8 + maxTravel, offsetWithinNavbar));
+
+            const progress = (offsetWithinNavbar - 8) / maxTravel || 0;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+            scrollIndicator.style.top = `${offsetWithinNavbar}px`;
+            window.scrollTo({
+                top: progress * docHeight,
+                behavior: "auto",
+            });
+        };
+
+        scrollIndicator.addEventListener("mousedown", (e) => {
+            e.preventDefault();
+            isDragging = true;
+            document.body.style.userSelect = "none";
+        });
+
+        document.addEventListener("mousemove", (e) => {
+            if (!isDragging) return;
+            updateScrollFromIndicator(e.clientY);
+        });
+
+        document.addEventListener("mouseup", () => {
+            if (!isDragging) return;
+            isDragging = false;
+            document.body.style.userSelect = "";
+        });
+
+        updateScrollIndicatorFromScroll();
+        window.addEventListener("scroll", updateScrollIndicatorFromScroll);
+        window.addEventListener("resize", updateScrollIndicatorFromScroll);
+    }
 
     const savedUser = localStorage.getItem("loggedInUser");
     if (savedUser) {

@@ -1,3 +1,5 @@
+/* Component: search inputs and fullscreen search panel */
+
 .home-search {
     background-color: rgb(31, 31, 31);
     border-radius: 20px;
@@ -37,7 +39,7 @@
     width: 65%;
     max-width: 90vw;
     height: 80%;
-    background-color: #c9c9c95f;
+    background-color: #c9c9c918;
     background-image: linear-gradient(180deg,
             rgba(200, 200, 200, 0.05) 0%,
             rgba(150, 150, 150, 0.05) 100%);
@@ -52,19 +54,8 @@
     flex-direction: column;
     align-items: center;
     gap: 70px;
-    height: 80%;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-}
-
-/*Just a freezer so I can customize css easier without ts fading out*/
-
-.search-panel.freeze {
-    transition: none !important;
-    transform: translate(-50%, -50%) !important;
-    opacity: 1 !important;
-    pointer-events: auto;
-    visibility: visible !important;
 }
 
 .search-panel.active {
@@ -98,24 +89,6 @@
 }
 
 .panel-movies {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    width: 90%;
-    overflow-y: auto;
-    padding-bottom: 40px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    scroll-behavior: smooth;
-
-}
-
-.panel-movies::-webkit-scrollbar {
-    display: none;
-}
-
-
-.panel-movies {
     width: 90%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -123,6 +96,13 @@
     overflow-y: auto;
     max-height: calc(80vh - 100px);
     padding-bottom: 20px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-behavior: smooth;
+}
+
+.panel-movies::-webkit-scrollbar {
+    display: none;
 }
 
 .panel-card {
@@ -153,3 +133,4 @@
     justify-content: center;
     height: 70px;
 }
+

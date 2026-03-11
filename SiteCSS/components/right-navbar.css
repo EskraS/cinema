@@ -1,3 +1,5 @@
+/* Component: right navbar, login button, and scroll indicator */
+
 .open-login {
     background: rgba(255, 255, 255, 0);
     padding: 12px;
@@ -87,10 +89,6 @@
   background-color: rgba(0,0,0,0.05);
 }
 
-
-
-/*Bottom Navbar [TO-DO]*/
-
 .right-navbar {
     position: relative;
     width: 50%;
@@ -101,3 +99,15 @@
     display: flex;
     flex-direction: column;
 }
+
+.scroll-indicator {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ffffff3b;
+    top: 8px;
+}
+

@@ -1,4 +1,6 @@
-/* Integral Font*/
+/* Base: custom Integral font faces */
+
+/* Integral Font */
 
 @font-face {
     font-family: 'Integral';
@@ -7,7 +9,7 @@
 
 @font-face {
     font-family: 'IntegralOblique';
-    src: url(fonts/Integral/Fontspring-DEMO-integralcf-regularoblique.otf);
+    src: url(/fonts/Integral/Fontspring-DEMO-integralcf-regularoblique.otf);
 }
 
 @font-face {
@@ -33,20 +35,21 @@
 
 @font-face {
     font-family: 'IntegralMedium';
-    src: url(fonts/Integral/Fontspring-DEMO-integralcf-medium.otf);
+    src: url(/fonts/Integral/Fontspring-DEMO-integralcf-medium.otf);
 }
 
 @font-face {
     font-family: 'IntegralMediumOblique';
-    src: url(fonts/Integral/Fontspring-DEMO-integralcf-mediumoblique.otf);
+    src: url(/fonts/Integral/Fontspring-DEMO-integralcf-mediumoblique.otf);
 }
 
 @font-face {
     font-family: 'IntegralExtrabold';
-    src: url(fonts/Integral/Fontspring-DEMO-integralcf-extrabold.otf);
+    src: url(/fonts/Integral/Fontspring-DEMO-integralcf-extrabold.otf);
 }
 
 @font-face{
     font-family: 'IntegralExtraBoldOblique';
-    src: url(fonts/Integral/Fontspring-DEMO-integralcf-extraboldoblique.otf);
+    src: url(/fonts/Integral/Fontspring-DEMO-integralcf-extraboldoblique.otf);
 }
+
